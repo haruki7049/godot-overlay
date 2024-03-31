@@ -49,7 +49,7 @@ self: super:
 
       src = super.fetchzip {
         url = "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_linux_x86_64.zip";
-        hash = "sha256-2aNeiR/bktqr2LDN9TWr67LDB0ai9S0XKfexmTb0TQg=";
+        hash = "sha256-OohkRD3vlUGShzFs9TzbSdOJN5zuaOdRIZJ5UdcEm2Q=";
       };
 
       nativeBuildInputs = [ super.autoPatchelfHook super.makeWrapper super.unzip ];
