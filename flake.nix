@@ -6,7 +6,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = { self, systems, nixpkgs, flake-utils, treefmt-nix }:
+  outputs = { self, systems, nixpkgs, treefmt-nix }:
     let
       eachSystem = f:
         nixpkgs.lib.genAttrs (import systems)
