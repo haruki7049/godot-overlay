@@ -12,7 +12,7 @@ let
 in
 pkgs.mkShell {
   packages = with pkgs; [
-    godot-mono-bin.${godotVersion}
+    godot-bin.mono.${godotVersion}
     dotnet-sdk
   ];
 }
@@ -38,7 +38,7 @@ pkgs.mkShell {
     {
       devShells."x86_64-linux".default = pkgs.mkShell {
         packages = with pkgs; [
-          godot-mono-bin."4.2.1"
+          godot-bin.mono."4.2.1"
           dotnet-sdk
         ];
 
