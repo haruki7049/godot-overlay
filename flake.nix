@@ -13,22 +13,6 @@
       in rec {
         # Use `nix fmt`
         formatter = pkgs.nixfmt;
-
-        packages = import ./default.nix {
-          inherit system pkgs;
-          version = "3.5.1";
-        };
-
-        #apps = rec {
-        #  default = apps.godot;
-        #  godot = flake-utils.lib.mkApp { drv = packages; };
-        #};
-        #godotMono = flake-utils.lib.mkApp {
-        #  drv = import ./overlays/godotMono { inherit system pkgs; };
-        #};
-        #godotServer = flake-utils.lib.mkApp {
-        #  drv = import ./overlays/godotServer { inherit system pkgs; };
-        #};
       });
 
 }
