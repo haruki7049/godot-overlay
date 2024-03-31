@@ -69,6 +69,8 @@ self: super:
         super.libpulseaudio
         super.libGL
         super.zlib
+        super.dbus
+        super.fontconfig
       ];
 
       libraries = super.lib.makeLibraryPath buildInputs;
