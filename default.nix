@@ -63,6 +63,9 @@ self: super:
         super.xorg.libXrender
         super.xorg.libX11
         super.xorg.libXi
+        super.xorg.libXext
+        super.xorg.libfontenc
+        super.libxkbcommon
         super.libpulseaudio
         super.libGL
         super.zlib
