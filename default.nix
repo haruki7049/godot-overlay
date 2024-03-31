@@ -1,16 +1,17 @@
-self: super:
-{
+self: super: {
   godot-mono-bin = {
     "3.5.1" = super.stdenv.mkDerivation rec {
       pname = "godot-mono-bin";
       version = "3.5.1";
 
       src = super.fetchzip {
-        url = "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_x11_64.zip";
+        url =
+          "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_x11_64.zip";
         hash = "sha256-2aNeiR/bktqr2LDN9TWr67LDB0ai9S0XKfexmTb0TQg=";
       };
 
-      nativeBuildInputs = [ super.autoPatchelfHook super.makeWrapper super.unzip ];
+      nativeBuildInputs =
+        [ super.autoPatchelfHook super.makeWrapper super.unzip ];
 
       buildInputs = [
         super.udev
@@ -48,11 +49,13 @@ self: super:
       version = "4.2.1";
 
       src = super.fetchzip {
-        url = "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_linux_x86_64.zip";
+        url =
+          "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_linux_x86_64.zip";
         hash = "sha256-OohkRD3vlUGShzFs9TzbSdOJN5zuaOdRIZJ5UdcEm2Q=";
       };
 
-      nativeBuildInputs = [ super.autoPatchelfHook super.makeWrapper super.unzip ];
+      nativeBuildInputs =
+        [ super.autoPatchelfHook super.makeWrapper super.unzip ];
 
       buildInputs = [
         super.udev

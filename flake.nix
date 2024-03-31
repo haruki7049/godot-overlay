@@ -3,16 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/23.11";
-    flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs = { self, systems, nixpkgs, flake-utils, treefmt-nix }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import nixpkgs { inherit system; };
-      in rec {
-        # Use `nix fmt`
-        formatter = pkgs.nixfmt;
-      });
+    let
+      eachSystem = f:
+        nixpkgs.lib.genAttrs (import systems)
+        (system: f nixpkgs.legacyPackages.${system});
+      treefmtEval =
+        eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+    in {
+      # Use `nix fmt`
+      formatter =
+        eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
+      # Use `nix flake check`
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      });
+    };
 }

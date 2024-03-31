@@ -6,20 +6,14 @@
 
   outputs = { self, nixpkgs, godot-overlay }:
     let
-      overlays = [
-        (import godot-overlay)
-      ];
+      overlays = [ (import godot-overlay) ];
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         inherit overlays;
       };
-    in
-    {
+    in {
       devShells."x86_64-linux".default = pkgs.mkShell {
-        packages = with pkgs; [
-          godot-mono-bin."4.2.1"
-          dotnet-sdk
-        ];
+        packages = with pkgs; [ godot-mono-bin."4.2.1" dotnet-sdk ];
 
         shellHook = ''
           export PS1="\n[nix-shell:\w]$ "
