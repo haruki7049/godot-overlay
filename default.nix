@@ -47,7 +47,7 @@ self: super: {
 
       "3.5.3" = super.stdenv.mkDerivation rec {
         pname = "godot-mono-bin";
-        version = "3.5.1";
+        version = "3.5.3";
 
         src = super.fetchzip {
           url =
