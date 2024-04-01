@@ -53,4 +53,5 @@ pkgs.mkShell {
 ## A list of versions this overlay can support
 - mono
     - 3.5.1
+    - 3.5.3
     - 4.2.1
