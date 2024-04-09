@@ -7,7 +7,7 @@ self: super: {
 
         src = super.fetchzip {
           url =
-            "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_x11_64.zip";
+            "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_mono_x11_64.zip"
           hash = "sha256-2aNeiR/bktqr2LDN9TWr67LDB0ai9S0XKfexmTb0TQg=";
         };
 
@@ -51,7 +51,7 @@ self: super: {
 
         src = super.fetchzip {
           url =
-            "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_x11_64.zip";
+            "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_mono_x11_64.zip"
           hash = "sha256-q+zB5R7ATH1z0/mLLzibLEeKR/Ppw5JmFO/LMZtD9VM=";
         };
 
@@ -95,7 +95,7 @@ self: super: {
 
         src = super.fetchzip {
           url =
-            "https://downloads.tuxfamily.org/godotengine/${version}/mono/Godot_v${version}-stable_mono_linux_x86_64.zip";
+            "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_linux.x86_64.zip"
           hash = "sha256-OohkRD3vlUGShzFs9TzbSdOJN5zuaOdRIZJ5UdcEm2Q=";
         };
 
