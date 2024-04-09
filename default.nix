@@ -95,7 +95,7 @@ self: super: {
 
         src = super.fetchzip {
           url =
-            "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_linux.x86_64.zip";
+            "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_mono_linux_x86_64.zip";
           hash = "sha256-OohkRD3vlUGShzFs9TzbSdOJN5zuaOdRIZJ5UdcEm2Q=";
         };
 
