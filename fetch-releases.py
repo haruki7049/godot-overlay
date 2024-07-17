@@ -75,3 +75,13 @@ def gen_nix_hash(url: str) -> str:
     """
     result = subprocess.run(["nix-prefetch-url", url], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return result.stdout.replace("\n", "")
+
+
+def gen_list_of_download_link(sources: dict) -> list:
+    result: list = []
+
+    for version in sources:
+        for assets in version["assets"]:
+            result.append(assets["browser_download_url"])
+
+    return result
