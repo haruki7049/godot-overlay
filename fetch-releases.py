@@ -139,6 +139,30 @@ def gen_v3_x64_releases(versions: list, v3_x64_urls: list) -> list:
     return result
 
 
+def gen_releases(versions: list, v3_x64_urls: list, v4_x64_urls: list) -> list:
+    result: list = []
+
+    print("Number of versions: ", len(versions))
+
+    for url in v3_x64_urls:
+        for version in versions:
+            if is_correct_version_url(version, url):
+                print("Generating nix hash for: ", url)
+                sha256 = gen_nix_hash(url)
+
+                result.append({ "version": version, "url": url, "sha256": sha256, "arch": "x86_64-linux" })
+
+    return result
+
+
+def is_correct_version_url(version: str, url: str) -> bool:
+    pattern = r"releases/download/(\d+\.\d+\.\d+\-stable)/Godot_"
+    match = re.search(pattern, url)
+
+    if match:
+        return match.group(1) == version
+
+
 if __name__ == "__main__":
     owner: str = "godotengine"
     repo: str = "godot"
@@ -157,5 +181,6 @@ if __name__ == "__main__":
     godot_v3_urls: list = filter_godot_v3_link(urls)
     godot_v4_x64_urls: list = gen_v4_x64_releases(versions, godot_v4_urls)
     godot_v3_x64_urls: list = gen_v3_x64_releases(versions, godot_v3_urls)
+    releases: list = gen_releases(versions, godot_v3_x64_urls, godot_v4_x64_urls)
 
-    print(godot_v3_x64_urls)
+    print(releases)
