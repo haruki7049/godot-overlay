@@ -144,6 +144,14 @@ def gen_releases(versions: list, v3_x64_urls: list, v4_x64_urls: list) -> list:
 
     print("Number of versions: ", len(versions))
 
+    for url in v4_x64_urls:
+        for version in versions:
+            if is_correct_version_url(version, url):
+                print("Generating nix hash for: ", url)
+                sha256 = gen_nix_hash(url)
+
+                result.append({ "version": version, "url": url, "sha256": sha256, "arch": "x86_64-linux" })
+
     for url in v3_x64_urls:
         for version in versions:
             if is_correct_version_url(version, url):
