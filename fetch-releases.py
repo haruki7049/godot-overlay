@@ -92,17 +92,7 @@ def filter_x86_64_linux_link(urls: list) -> list:
     result: list = []
 
     for url in urls:
-        if "deno-x86_64-unknown-linux-gnu" in url:
-            result.append(url)
-
-    return result
-
-
-def filter_aarch64_linux_link(urls: list) -> list:
-    result: list = []
-
-    for url in urls:
-        if "deno-aarch64-unknown-linux-gnu" in url:
+        if "linux_x86_64" in url or "x11_64" in url:
             result.append(url)
 
     return result
@@ -125,15 +115,13 @@ def gen_releases_list(versions: list, x86_64_linux_urls: list, aarch64_linux_url
 
     for url in x86_64_linux_urls:
         for version in versions:
-            if is_correct_version_url(version, url):
-                print("Generating nix hash for", url)
-                sha256 = gen_nix_hash(url)
-                result.append({"version": version.replace("v", ""), "url": url, "arch": "x86_64-linux", "sha256": sha256})
-
-            elif is_correct_rc_version_url(version, url):
-                print("Generating nix hash for", url)
-                sha256 = gen_nix_hash(url)
-                result.append({"version": version.replace("v", ""), "url": url, "arch": "x86_64-linux", "sha256": sha256})
+            sha256 = gen_nix_hash(url)
+            result.append({
+                "version": version,
+                "url": url,
+                "sha256": sha256,
+                "arch": "x86_64-linux"
+            })
 
     return result
 
@@ -157,12 +145,13 @@ if __name__ == "__main__":
     repo: str = "deno"
     destination = "sources.json"
 
-    deno_info: list = get_all_releases(owner, repo)
-    versions: list = gen_list_of_versions(deno_info)
-    urls: list = gen_list_of_download_link(deno_info)
-    x86_64_linux_urls: list = filter_x86_64_linux_link(urls)
-    aarch64_linux_urls: list = filter_aarch64_linux_link(urls)
-    releases_list: dict = { "deno": gen_releases_list(versions, x86_64_linux_urls, aarch64_linux_urls)}
-
-    save_to_json(releases_list, destination)
+    godot_info: list = get_all_releases(owner, repo)
+    save_to_json(godot_info, "releases.json")
     print("Done!")
+
+    #versions: list = gen_list_of_versions(godot_info)
+    #urls: list = gen_list_of_download_link(godot_info)
+    #x86_64_linux_urls: list = filter_x86_64_linux_link(urls)
+    #releases_list: dict = { "deno": gen_releases_list(versions, x86_64_linux_urls, [])}
+
+    #save_to_json(releases_list, destination)
