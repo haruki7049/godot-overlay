@@ -154,8 +154,8 @@ if __name__ == "__main__":
 
     print(godot_info)
 
-    #versions: list = gen_list_of_versions(godot_info)
-    #urls: list = gen_list_of_download_link(godot_info)
+    versions: list = gen_list_of_versions(godot_info)
+    urls: list = gen_list_of_download_link(godot_info)
     #x86_64_linux_urls: list = filter_x86_64_linux_link(urls)
     #releases_list: dict = { "deno": gen_releases_list(versions, x86_64_linux_urls, [])}
 
