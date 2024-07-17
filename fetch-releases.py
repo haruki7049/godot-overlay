@@ -38,3 +38,18 @@ def get_all_releases(owner: str, repo: str) -> list:
             break
 
     return releases
+
+
+def save_to_json(sources: dict, filename: str):
+    """
+    Save json to a file
+
+    Parameters
+    ----------
+    json : list
+        JSON data which will be saved to a file
+    filename : str
+        File name to save the JSON data
+    """
+    with open(filename, "w") as file:
+        json.dump(sources, file, indent=2)
