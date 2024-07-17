@@ -88,6 +88,26 @@ def gen_list_of_download_link(sources: dict) -> list:
     return result
 
 
+def filter_godot_v4_link(urls: list) -> list:
+    result: list = []
+
+    for url in urls:
+        if "Godot_v4" in url:
+            result.append(url)
+
+    return result
+
+
+def filter_godot_v3_link(urls: list) -> list:
+    result: list = []
+
+    for url in urls:
+        if "Godot_v3" in url:
+            result.append(url)
+
+    return result
+
+
 def gen_list_of_versions(sources: list) -> list:
     result: list = []
 
@@ -109,7 +129,7 @@ if __name__ == "__main__":
     with open("releases.json", "r") as f:
         godot_info = json.load(f)
 
-    print(godot_info)
-
     versions: list = gen_list_of_versions(godot_info)
     urls: list = gen_list_of_download_link(godot_info)
+    godot_v4_urls: list = filter_godot_v4_link(urls)
+    godot_v3_urls: list = filter_godot_v3_link(urls)
