@@ -3,6 +3,7 @@
 
 import json
 import requests
+import subprocess
 
 
 def get_all_releases(owner: str, repo: str) -> list:
@@ -53,3 +54,24 @@ def save_to_json(sources: dict, filename: str):
     """
     with open(filename, "w") as file:
         json.dump(sources, file, indent=2)
+
+
+def gen_nix_hash(url: str) -> str:
+    """
+    Generate nix-hash from url by using nix-prefetch-url
+
+    Parameters
+    ----------
+    url : str
+        URL of the file to fetch
+
+    Returns
+    -------
+    hash : str
+        Nix hash of the file
+
+    >>> gen_nix_hash("https://github.com/denoland/deno/releases/download/v1.42.0/deno-x86_64-unknown-linux-gnu.zip")
+    0brv6v98jx2b2mwhx8wpv2sqr0zp2bfpiyv4ayziay0029rxldny
+    """
+    result = subprocess.run(["nix-prefetch-url", url], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    return result.stdout.replace("\n", "")
