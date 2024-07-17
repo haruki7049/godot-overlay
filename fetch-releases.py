@@ -141,8 +141,8 @@ def is_correct_version_url(version: str, url: str) -> bool:
 
 
 if __name__ == "__main__":
-    owner: str = "denoland"
-    repo: str = "deno"
+    owner: str = "godotengine"
+    repo: str = "godot"
     destination = "sources.json"
 
     #godot_info: list = get_all_releases(owner, repo)
