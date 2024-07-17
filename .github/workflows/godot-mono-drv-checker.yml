@@ -1,4 +1,4 @@
-name: deno-drv-checker
+name: godot-mono-drv-checker
 on:
   push:
 permissions: {}
