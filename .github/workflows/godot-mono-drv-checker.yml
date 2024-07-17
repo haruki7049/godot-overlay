@@ -3,7 +3,7 @@ on:
   push:
 permissions: {}
 jobs:
-  check-v3.5.1:
+  check-v3-5-1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,7 +14,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run nix-shell
         run: nix-shell ./example/v3.5.1-mono.nix
-  check-v3.5.3:
+  check-v3-5-3:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,7 +25,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run nix-shell
         run: nix-shell ./example/v3.5.3-mono.nix
-  check-v4.2.1:
+  check-v4-2-1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
