@@ -1,4 +1,4 @@
-self: super: 
+self: super:
 let
   lib = super.lib;
   stdenv = super.stdenv;
@@ -14,8 +14,11 @@ in {
             inherit url sha256;
           };
 
-          nativeBuildInputs =
-            [ super.autoPatchelfHook super.makeWrapper super.unzip ];
+          nativeBuildInputs = [
+            super.autoPatchelfHook
+            super.makeWrapper
+            super.unzip
+          ];
 
           buildInputs = [
             super.udev
@@ -48,6 +51,11 @@ in {
           '';
         };
     in {
+      "3.5.1" = mkBinaryInstall {
+        version = "3.5.1";
+        url = "https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_mono_x11_64.zip";
+        sha256 = "022dyhv9kcgp54bjvxd28q3w7cpbmcszbkdhv2mxm4nv3y4mx8yr";
+      };
     };
   };
 }
