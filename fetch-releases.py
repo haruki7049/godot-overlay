@@ -88,16 +88,6 @@ def gen_list_of_download_link(sources: dict) -> list:
     return result
 
 
-def filter_x86_64_linux_link(urls: list) -> list:
-    result: list = []
-
-    for url in urls:
-        if "linux_x86_64" in url or "x11_64" in url:
-            result.append(url)
-
-    return result
-
-
 def gen_list_of_versions(sources: list) -> list:
     result: list = []
 
@@ -105,39 +95,6 @@ def gen_list_of_versions(sources: list) -> list:
         result.append(version["tag_name"])
 
     return result
-
-
-def gen_releases_list(versions: list, x86_64_linux_urls: list, aarch64_linux_urls: list) -> list:
-    result: list = []
-
-    # An message which counts the number of versions
-    print("Number of versions:", len(versions))
-
-    for url in x86_64_linux_urls:
-        for version in versions:
-            sha256 = gen_nix_hash(url)
-            result.append({
-                "version": version,
-                "url": url,
-                "sha256": sha256,
-                "arch": "x86_64-linux"
-            })
-
-    return result
-
-
-def is_correct_rc_version_url(version: str, url: str) -> bool:
-    pattern = r"releases/download/(v\d+\.\d+\.\d+-rc\d+)/deno-"
-    match = re.search(pattern, url)
-    if match:
-        return match.group(1) == version
-
-
-def is_correct_version_url(version: str, url: str) -> bool:
-    pattern = r"releases/download/(v\d+\.\d+\.\d+)/deno-"
-    match = re.search(pattern, url)
-    if match:
-        return match.group(1) == version
 
 
 if __name__ == "__main__":
@@ -156,7 +113,3 @@ if __name__ == "__main__":
 
     versions: list = gen_list_of_versions(godot_info)
     urls: list = gen_list_of_download_link(godot_info)
-    #x86_64_linux_urls: list = filter_x86_64_linux_link(urls)
-    #releases_list: dict = { "deno": gen_releases_list(versions, x86_64_linux_urls, [])}
-
-    #save_to_json(releases_list, destination)
