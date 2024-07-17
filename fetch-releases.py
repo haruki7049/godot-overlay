@@ -174,15 +174,9 @@ def is_correct_version_url(version: str, url: str) -> bool:
 if __name__ == "__main__":
     owner: str = "godotengine"
     repo: str = "godot"
-    destination = "sources.json"
+    destination: str = "sources.json"
 
-    #godot_info: list = get_all_releases(owner, repo)
-    #save_to_json(godot_info, "releases.json")
-    #print("Done!")
-
-    with open("releases.json", "r") as f:
-        godot_info = json.load(f)
-
+    godot_info: list = get_all_releases(owner, repo)
     versions: list = gen_list_of_versions(godot_info)
     urls: list = gen_list_of_download_link(godot_info)
     godot_v4_urls: list = filter_godot_v4_link(urls)
@@ -191,4 +185,5 @@ if __name__ == "__main__":
     godot_v3_x64_urls: list = gen_v3_x64_releases(versions, godot_v3_urls)
     releases: list = gen_releases(versions, godot_v3_x64_urls, godot_v4_x64_urls)
 
-    print(releases)
+    save_to_json({ "godot-bin": { "mono": releases } }, destination)
+    print("Done!!")
