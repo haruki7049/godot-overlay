@@ -117,6 +117,15 @@ def gen_list_of_versions(sources: list) -> list:
     return result
 
 
+def gen_v4_x64_releases(versions: list, v4_x64_urls: list) -> list:
+    result: list = []
+
+    for version in versions:
+        for url in v4_x64_urls:
+            if version in url and "mono_linux.x86_64" in url:
+                result.append(url)
+
+
 if __name__ == "__main__":
     owner: str = "godotengine"
     repo: str = "godot"
@@ -133,3 +142,6 @@ if __name__ == "__main__":
     urls: list = gen_list_of_download_link(godot_info)
     godot_v4_urls: list = filter_godot_v4_link(urls)
     godot_v3_urls: list = filter_godot_v3_link(urls)
+    godot_v4_x64_urls: list = gen_v4_x64_releases(versions, godot_v4_urls)
+
+    print(godot_v4_x64_urls)
