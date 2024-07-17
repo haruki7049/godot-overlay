@@ -145,9 +145,14 @@ if __name__ == "__main__":
     repo: str = "deno"
     destination = "sources.json"
 
-    godot_info: list = get_all_releases(owner, repo)
-    save_to_json(godot_info, "releases.json")
-    print("Done!")
+    #godot_info: list = get_all_releases(owner, repo)
+    #save_to_json(godot_info, "releases.json")
+    #print("Done!")
+
+    with open("releases.json", "r") as f:
+        godot_info = json.load(f)
+
+    print(godot_info)
 
     #versions: list = gen_list_of_versions(godot_info)
     #urls: list = gen_list_of_download_link(godot_info)
