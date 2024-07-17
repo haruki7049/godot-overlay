@@ -59,6 +59,12 @@ in
           url = "https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_mono_x11_64.zip";
           sha256 = "022dyhv9kcgp54bjvxd28q3w7cpbmcszbkdhv2mxm4nv3y4mx8yr";
         };
+
+        "3.5.3" = mkBinaryInstall {
+          version = "3.5.3";
+          url = "https://github.com/godotengine/godot/releases/download/3.5.3-stable/Godot_v3.5.3-stable_mono_x11_64.zip";
+          sha256 = "0lzm8fdk3jzg2ik95hz9yd3qlirckcw2z2zrsdrpsk603vjw3v5b";
+        };
       };
   };
 }
