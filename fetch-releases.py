@@ -122,8 +122,10 @@ def gen_v4_x64_releases(versions: list, v4_x64_urls: list) -> list:
 
     for version in versions:
         for url in v4_x64_urls:
-            if version in url and "mono_linux.x86_64" in url:
+            if version in url and "mono_linux_x86_64" in url:
                 result.append(url)
+
+    return result
 
 
 if __name__ == "__main__":
