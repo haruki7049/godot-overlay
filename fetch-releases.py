@@ -74,7 +74,7 @@ def gen_nix_hash(url: str) -> str:
     >>> gen_nix_hash("https://github.com/denoland/deno/releases/download/v1.42.0/deno-x86_64-unknown-linux-gnu.zip")
     0brv6v98jx2b2mwhx8wpv2sqr0zp2bfpiyv4ayziay0029rxldny
     """
-    result = subprocess.run(["nix-prefetch-url", url], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    result = subprocess.run(["nix-prefetch-url", "--unpack", url], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return result.stdout.replace("\n", "")
 
 
