@@ -1,0 +1,204 @@
+{
+  "godot-bin": {
+    "mono": [
+      {
+        "version": "4.2.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_mono_linux_x86_64.zip",
+        "sha256": "0x3wqqs39qbc8xj6dc7184s8v43v58hjaw8a89j9fmdipp3ac5z3",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.1.4-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.1.4-stable/Godot_v4.1.4-stable_mono_linux_x86_64.zip",
+        "sha256": "1g2p3j1jh2cwwln1r7fqkv651aww55xvizklvcilh2m3j37qiwnd",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.2.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.2.1-stable/Godot_v4.2.1-stable_mono_linux_x86_64.zip",
+        "sha256": "0r4v0kbm2ycj458yfs7fkhvqkls9vcygav1ihy9435gg7m26921s",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.1.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.1.3-stable/Godot_v4.1.3-stable_mono_linux_x86_64.zip",
+        "sha256": "0dhgrrzs34r8fmhb06rmjrm1qaii7s1y3p04b1wjzl9a3rghzns2",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.1.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.1.2-stable/Godot_v4.1.2-stable_mono_linux_x86_64.zip",
+        "sha256": "0gs7c8vw654a4d024s8x15cq34a46zy422vf7qfv4vc8x0cpmi9q",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.0.4-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.0.4-stable/Godot_v4.0.4-stable_mono_linux_x86_64.zip",
+        "sha256": "1qnwwgxkxj01aa0pld2vngms3hs3vliva9ncaj0f7yp2d3lb652s",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.1.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.1.1-stable/Godot_v4.1.1-stable_mono_linux_x86_64.zip",
+        "sha256": "1h1mf429kxgbrgfibv494jw0pj0nfx112ghf7j5a2mbk7zsvzipv",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.0.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.0.3-stable/Godot_v4.0.3-stable_mono_linux_x86_64.zip",
+        "sha256": "108i3qdssbvxmflb4w5lj611hfn0bbfvk7yyyni9jabnnmyscxnk",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.0.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.0.2-stable/Godot_v4.0.2-stable_mono_linux_x86_64.zip",
+        "sha256": "0n0k85q1mxkv7qplfj3s2450a4brdl4cwdj3l6fhiz3942gyy4hc",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "4.0.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/4.0.1-stable/Godot_v4.0.1-stable_mono_linux_x86_64.zip",
+        "sha256": "08qs7jpd052c2m3szz2f7bn8407nj9nidzl2s8691mbjajhdf3s2",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.5.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.5.3-stable/Godot_v3.5.3-stable_mono_x11_64.zip",
+        "sha256": "0lzm8fdk3jzg2ik95hz9yd3qlirckcw2z2zrsdrpsk603vjw3v5b",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.5.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.5.2-stable/Godot_v3.5.2-stable_mono_x11_64.zip",
+        "sha256": "0mfkwa2nfmyzng4bgj6abhiwkrvjyk15gkjpr8acmvxfv22hksx1",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.5.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_mono_x11_64.zip",
+        "sha256": "022dyhv9kcgp54bjvxd28q3w7cpbmcszbkdhv2mxm4nv3y4mx8yr",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.4.5-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.4.5-stable/Godot_v3.4.5-stable_mono_x11_64.zip",
+        "sha256": "1v889qq37gkj3lspmax54m4j2g1f2kwggncc8sfiaz2kl9nq5f50",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.4.4-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.4.4-stable/Godot_v3.4.4-stable_mono_x11_64.zip",
+        "sha256": "07igv9lw8yvjq67nrxxpczdp4jw567f8q31x1pd1b8xpb0z2as2q",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.4.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.4.3-stable/Godot_v3.4.3-stable_mono_x11_64.zip",
+        "sha256": "14zzkinvl85mxnbkhyp277c08x0mcy1dip3v177fajvzjhz6j5i1",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.4.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.4.2-stable/Godot_v3.4.2-stable_mono_x11_64.zip",
+        "sha256": "1i8v31vsngj0rhldhm5x6gn0hf4mw2rj5kikdsbyghd11d4l567f",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.4.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.4.1-stable/Godot_v3.4.1-stable_mono_x11_64.zip",
+        "sha256": "0j6bqzxb4baf497zlirmpihs23b318llgdhscdys6ih1ana0adyf",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.3.4-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.3.4-stable/Godot_v3.3.4-stable_mono_x11_64.zip",
+        "sha256": "15z3svfipa1pm3102ysa89abdp1bpxpy0fqf4vfxjs1kjyhkiqx1",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.3.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.3.3-stable/Godot_v3.3.3-stable_mono_x11_64.zip",
+        "sha256": "1yzdw4bc4gnf0byfi4h5vrnw72m18ryqxadk7wn8px83a2pz8598",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.3.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.3.2-stable/Godot_v3.3.2-stable_mono_x11_64.zip",
+        "sha256": "1ra33gj9dwdw8360v7cskrqjw92w1cbgqys0s5zldp1x8l4x85f7",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.3.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.3.1-stable/Godot_v3.3.1-stable_mono_x11_64.zip",
+        "sha256": "10pbzld3cj5n23qqgl0fhs8bxqa8gimyhpb2i9zvv2kkwns1hwv9",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.2.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.2.3-stable/Godot_v3.2.3-stable_mono_x11_64.zip",
+        "sha256": "1qi41f0b9ppkc81dg4c7r59vkcdih0q3dg24fx4sinmalb7rjdfi",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.2.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.2.2-stable/Godot_v3.2.2-stable_mono_x11_64.zip",
+        "sha256": "0m2sgq1zxbbjb62cdn9py8wp9fv3ydry7kh6q6ry1hs1l2d69jxn",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.2.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.2.1-stable/Godot_v3.2.1-stable_mono_x11_64.zip",
+        "sha256": "016imjsvjmpcw5r3csklkycs3vmqhmkxdv75q6q6c1mp3vhbqrah",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.1.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.1.2-stable/Godot_v3.1.2-stable_mono_x11_64.zip",
+        "sha256": "0lzl9kin9pckcdl262fp4kfybjx0fbj79954xmz75jqazwgnp0dd",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.1.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.1.1-stable/Godot_v3.1.1-stable_mono_x11_64.zip",
+        "sha256": "0jyv8drlsxpd16bvga6argy1aak59bhcqdkq92qkvsdyz24f6q8i",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.6-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.6-stable/Godot_v3.0.6-stable_mono_x11_64.zip",
+        "sha256": "0n83kg5ia5hk97s05xmlwl6sa02qzk35ywkix3n08qfg4w82v6x2",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.5-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.5-stable/Godot_v3.0.5-stable_mono_x11_64.zip",
+        "sha256": "17211z0gy76py4xyzmjcrh0m1r02m5sgawf1jsnzwji5bhyh7ka4",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.4-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.4-stable/Godot_v3.0.4-stable_mono_x11_64.zip",
+        "sha256": "03hylyfzhs7xbw22y73x13wnjvpc7qrm9kzmcm5gf2v04qd2cl2x",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.3-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.3-stable/Godot_v3.0.3-stable_mono_x11_64.zip",
+        "sha256": "1dxjcw8v2cjcjjrgk8p9gy0wb12qdig12lfw2pmhg96rkpl9nyj8",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.2-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.2-stable/Godot_v3.0.2-stable_mono_x11_64.zip",
+        "sha256": "03ff3lf0wrg3kl1nsch4cl5br338bc6k4jmx3b7745jin4gcr64g",
+        "arch": "x86_64-linux"
+      },
+      {
+        "version": "3.0.1-stable",
+        "url": "https://github.com/godotengine/godot/releases/download/3.0.1-stable/Godot_v3.0.1-stable_mono_x11_64.zip",
+        "sha256": "1zycmqrid2kjibrwv25av18d217w6sh4664yk8pflqy50yms32px",
+        "arch": "x86_64-linux"
+      }
+    ]
+  }
+}
