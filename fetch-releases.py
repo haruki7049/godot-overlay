@@ -88,26 +88,6 @@ def gen_list_of_download_link(sources: dict) -> list:
     return result
 
 
-def filter_godot_v4_link(urls: list) -> list:
-    result: list = []
-
-    for url in urls:
-        if "Godot_v4" in url:
-            result.append(url)
-
-    return result
-
-
-def filter_godot_v3_link(urls: list) -> list:
-    result: list = []
-
-    for url in urls:
-        if "Godot_v3" in url:
-            result.append(url)
-
-    return result
-
-
 def gen_list_of_versions(sources: list) -> list:
     result: list = []
 
@@ -117,23 +97,23 @@ def gen_list_of_versions(sources: list) -> list:
     return result
 
 
-def gen_v4_x64_releases(versions: list, v4_x64_urls: list) -> list:
+def gen_v4_mono_x64_releases(versions: list, urls: list) -> list:
     result: list = []
 
     for version in versions:
-        for url in v4_x64_urls:
-            if version in url and "mono_linux_x86_64" in url:
+        for url in urls:
+            if f"Godot_v{version}_mono_linux_x86_64.zip" in url:
                 result.append(url)
 
     return result
 
 
-def gen_v3_x64_releases(versions: list, v3_x64_urls: list) -> list:
+def gen_v3_mono_x64_releases(versions: list, urls: list) -> list:
     result: list = []
 
     for version in versions:
-        for url in v3_x64_urls:
-            if version in url and "mono_x11_64" in url:
+        for url in urls:
+            if f"Godot_v{version}_mono_x11_64.zip" in url:
                 result.append(url)
 
     return result
@@ -179,11 +159,9 @@ if __name__ == "__main__":
     godot_info: list = get_all_releases(owner, repo)
     versions: list = gen_list_of_versions(godot_info)
     urls: list = gen_list_of_download_link(godot_info)
-    godot_v4_urls: list = filter_godot_v4_link(urls)
-    godot_v3_urls: list = filter_godot_v3_link(urls)
-    godot_v4_x64_urls: list = gen_v4_x64_releases(versions, godot_v4_urls)
-    godot_v3_x64_urls: list = gen_v3_x64_releases(versions, godot_v3_urls)
-    releases: list = gen_releases(versions, godot_v3_x64_urls, godot_v4_x64_urls)
+    godot_v4_mono_x64_urls: list = gen_v4_mono_x64_releases(versions, urls)
+    godot_v3_mono_x64_urls: list = gen_v3_mono_x64_releases(versions, urls)
+    releases: list = gen_releases(versions, godot_v3_mono_x64_urls, godot_v4_mono_x64_urls)
 
     save_to_json({ "godot-bin": { "mono": releases } }, destination)
     print("Done!!")
