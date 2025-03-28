@@ -1,27 +1,43 @@
 {
-  description = "An overlay for Godot";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/23.11";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    systems.url = "github:nix-systems/default";
+    flake-compat.url = "github:edolstra/flake-compat";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, systems, nixpkgs, treefmt-nix }:
-    let
-      eachSystem = f:
-        nixpkgs.lib.genAttrs (import systems)
-          (system: f nixpkgs.legacyPackages.${system});
-      treefmtEval =
-        eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
-    in
-    {
-      # Use `nix fmt`
-      formatter =
-        eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
+      imports = [
+        inputs.treefmt-nix.flakeModule
+      ];
 
-      # Use `nix flake check`
-      checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
-      });
+      perSystem =
+        { pkgs, ... }:
+        {
+          treefmt = {
+            projectRootFile = "flake.nix";
+            programs.nixfmt.enable = true;
+          };
+
+          devShells.default = pkgs.mkShell {
+            packages = [
+              pkgs.nil
+            ];
+
+            shellHook = ''
+              export PS1="\n[nix-shell\w]$ "
+            '';
+          };
+        };
     };
 }
