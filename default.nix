@@ -8,7 +8,13 @@ in
   godot-bin = {
     mono =
       let
-        mkBinaryInstallV3 = { pname ? "godot-mono-bin", version, url, sha256 }:
+        mkBinaryInstallV3 =
+          {
+            pname ? "godot-mono-bin",
+            version,
+            url,
+            sha256,
+          }:
           stdenv.mkDerivation rec {
             inherit pname version;
 
@@ -50,7 +56,13 @@ in
                 --set LD_LIBRARY_PATH ${libraries}
             '';
           };
-        mkBinaryInstallV4 = { pname ? "godot-mono-bin", version, url, sha256 }:
+        mkBinaryInstallV4 =
+          {
+            pname ? "godot-mono-bin",
+            version,
+            url,
+            sha256,
+          }:
           stdenv.mkDerivation rec {
             inherit pname version;
 
