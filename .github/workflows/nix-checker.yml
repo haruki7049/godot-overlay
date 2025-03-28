@@ -1,4 +1,4 @@
-name: godot-mono-drv-checker
+name: nix-checker
 on:
   push:
 permissions: {}
