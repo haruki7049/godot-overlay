@@ -1,9 +1,11 @@
 self: super:
+
 let
   lib = super.lib;
   stdenv = super.stdenv;
   fetchzip = super.fetchzip;
 in
+
 {
   godot-bin = {
     mono =
@@ -30,7 +32,7 @@ in
 
             buildInputs = [
               super.udev
-              super.alsaLib
+              super.alsa-lib
               super.xorg.libXcursor
               super.xorg.libXinerama
               super.xorg.libXrandr
@@ -78,7 +80,7 @@ in
 
             buildInputs = [
               super.udev
-              super.alsaLib
+              super.alsa-lib
               super.xorg.libXcursor
               super.xorg.libXinerama
               super.xorg.libXrandr
