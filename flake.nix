@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    systems.url = "github:nix-systems/default";
+    systems.url = "github:nix-systems/x86_64-linux";
     flake-compat.url = "github:edolstra/flake-compat";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -22,8 +22,23 @@
       ];
 
       perSystem =
-        { pkgs, ... }:
+        { pkgs, system, ... }:
         {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              (import ./.)
+            ];
+          };
+
+          checks = {
+            inherit (pkgs.godot-bin.mono)
+              "3.5.1"
+              "3.5.3"
+              "4.2.1"
+              ;
+          };
+
           treefmt = {
             projectRootFile = "flake.nix";
             programs.nixfmt-rfc-style.enable = true;
